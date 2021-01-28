@@ -1,9 +1,12 @@
 <div class="container">
   <h1>Rails-AirBnb</h1>
   <% @flats.each do |flat| %>
-    <h3><%= flat.name %></h3>
-    <h4><%= flat.description %></h4>
-    <%= link_to flat.name, flat_path(flat), class: "btn btn-primary m-3" %>
-
+    <div class="row align-items-center justify-content-center">
+      <h3><%= flat.name %></h3>
+      <p><%= flat.description %></p>
+      <%= link_to 'More details', flat_path(flat), class: "btn btn-primary m-3" %>
+      <%= link_to 'Edit', edit_flat_path(flat.id), class: "btn btn-info m-3" %>
+      <%= link_to 'Delete', flat_path(flat.id), class: "btn btn-danger m-3", method: :delete, data: { confirm: "Delete #{flat.name}?" } %>
+    </div>
   <% end %>
 </div>
