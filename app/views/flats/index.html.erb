@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Rails-AirBnb</h1>
+  <% @flats.each do |flat| %>
+    <h3><%= flat.name %></h3>
+    <h4><%= flat.description %></h4>
+    <%= link_to flat.name, flat_path(flat), class: "btn btn-primary m-3" %>
+
+  <% end %>
+</div>
